@@ -14,6 +14,18 @@ defmodule Shippo.Operation.Shipment do
   end
 
   @doc """
+  Get shipping rates for a shipment.
+
+  [https://goshippo.com/docs/reference#rates-get](https://goshippo.com/docs/reference#rates-get)
+  """
+  @spec rates(id :: binary(), currency :: binary()) :: Operation.t()
+  def rates(id, currency) do
+    path = Enum.join(["/shipments", id, "rates", currency], "/")
+
+    Operation.new(:post, path, nil)
+  end
+
+  @doc """
   Retrieve an existing shipment by object id.
   """
   @spec get(id :: binary(), opts :: keyword()) :: Operation.t()
