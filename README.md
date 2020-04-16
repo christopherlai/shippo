@@ -125,6 +125,9 @@ end
 
 Please see [`mox`](#)(https://hexdocs.pm/mox/Mox.html) for more information.
 
+## Code Status
+![ci](https://github.com/christopherlai/shippo/workflows/ci/badge.svg)
+
 ## License
 The MIT License (MIT)
 
