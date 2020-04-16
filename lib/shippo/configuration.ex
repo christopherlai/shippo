@@ -1,4 +1,17 @@
 defmodule Shippo.Configuration do
+  @moduledoc """
+   Default request configurations.
+
+   Defaults can be set in `config.exs`.
+
+   ## Example
+   ```
+   # config.exs
+
+   config :shippo, url: "http://test-url.com"
+   ```
+  """
+
   @type t :: %__MODULE__{
           url: nil | binary(),
           token: nil | binary(),

@@ -3,8 +3,8 @@ defmodule Shippo do
   Documentation for Shippo.
   """
 
-  alias Shippo.Request
   alias Shippo.Configuration
+  alias Shippo.Request
 
   def request(operation, overrides \\ [])
 

@@ -1,4 +1,8 @@
 defmodule Shippo.Request do
+  @moduledoc """
+  Helper functions for building the url, headers and body of a request.
+  """
+
   alias Shippo.Configuration
   alias Shippo.Operation
 

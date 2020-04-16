@@ -1,4 +1,8 @@
 defmodule Shippo.Client do
+  @moduledoc """
+  HTTP Client Behaviour.
+  """
+
   @type return :: {:ok, %{status_code: integer(), body: any()}} | {:error, %{reason: any()}}
 
   @callback request(

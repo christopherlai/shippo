@@ -1,4 +1,8 @@
 defmodule Shippo.Operation do
+  @moduledoc """
+  An `Operation` represents an API request as a struct.
+  """
+
   @type t :: %__MODULE__{
           http_method: nil | atom(),
           path: nil | binary(),

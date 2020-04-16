@@ -21,6 +21,7 @@ defmodule Shippo.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
+      {:credo, "~> 1.3", only: [:dev, :test], runtime: false},
       {:hackney, "~> 1.15", optional: true},
       {:jason, "~> 1.2", optional: true}
     ]
