@@ -9,8 +9,8 @@ defmodule Shippo.Operation.Refund do
   Creates a new refund object.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/refunds", params)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/refunds", params, opts)
   end
 
   @doc """

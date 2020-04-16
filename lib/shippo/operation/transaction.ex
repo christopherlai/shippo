@@ -9,13 +9,12 @@ defmodule Shippo.Operation.Transaction do
   Creates a new transaction object and purchases the shipping label for the provided rate or in one API call.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/transactions", params)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/transactions", params, opts)
   end
 
   @doc """
   Retrieve an existing transaction by object id.
-
   """
   @spec get(id :: binary(), opts :: keyword()) :: Operation.t()
   def get(id, opts \\ []) do

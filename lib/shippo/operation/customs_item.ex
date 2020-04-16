@@ -1,4 +1,4 @@
-defmodule Shippo.Operation.CustomsItems do
+defmodule Shippo.Operation.CustomsItem do
   @moduledoc """
   [Shippo Customs Items](https://goshippo.com/docs/reference#customs-items)
   """
@@ -9,8 +9,8 @@ defmodule Shippo.Operation.CustomsItems do
   Creates a new Customs Item object.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/customs/items", params)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/customs/items", params, opts)
   end
 
   @doc """

@@ -9,8 +9,8 @@ defmodule Shippo.Operation.CarrierAccount do
   Creates a new carrier account object.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/carrier_accounts", params)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/carrier_accounts", params, opts)
   end
 
   @doc """

@@ -9,8 +9,8 @@ defmodule Shippo.Operation.Manifest do
   Creates a new manifest object.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/manifests", params)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/manifests", params, opts)
   end
 
   @doc """

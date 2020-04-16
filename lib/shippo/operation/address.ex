@@ -9,8 +9,8 @@ defmodule Shippo.Operation.Address do
   Creates a new address object.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/addresses", params)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/addresses", params, opts)
   end
 
   @doc """

@@ -9,8 +9,8 @@ defmodule Shippo.Operation.Webhook do
   Creates a new webhook object.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/webhooks", params)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/webhooks", params, opts)
   end
 
   @doc """

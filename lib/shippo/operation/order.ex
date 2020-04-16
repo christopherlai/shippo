@@ -9,8 +9,8 @@ defmodule Shippo.Operation.Order do
   Creates a new order object.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/orders", params)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/orders", params, opts)
   end
 
   @doc """

@@ -9,8 +9,8 @@ defmodule Shippo.Operation.Batch do
   Creates a new batch object which allows you to purchase shipping labels for many shipments with one API call.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/batches", params)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/batches", params, opts)
   end
 
   @doc """
@@ -27,20 +27,20 @@ defmodule Shippo.Operation.Batch do
   Add batch shipments to an existing batch.
   """
   @spec add_shipments(id :: binary(), params :: [map()], opts :: keyword()) :: Operation.t()
-  def add_shipments(id, params, _opts \\ []) do
+  def add_shipments(id, params, opts \\ []) do
     path = Enum.join(["/batches", id, "add_shipments"], "/")
 
-    Operation.new(:post, path, params)
+    Operation.new(:post, path, params, opts)
   end
 
   @doc """
   Remove batch shipments from an existing batch.
   """
   @spec remove_shipments(id :: binary(), params :: [binary()], opts :: keyword()) :: Operation.t()
-  def remove_shipments(id, params, _opts \\ []) do
+  def remove_shipments(id, params, opts \\ []) do
     path = Enum.join(["/batches", id, "remove_shipments"], "/")
 
-    Operation.new(:post, path, params)
+    Operation.new(:post, path, params, opts)
   end
 
   @doc """

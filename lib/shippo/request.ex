@@ -33,10 +33,12 @@ defmodule Shippo.Request do
   @doc """
   Returns a binary representing the request body.
   """
-  @spec body(configuration :: Configuration.t(), Operation.t()) :: binary()
-  def body(_configuration, %{data: data}) when is_nil(data), do: ""
+  @spec body(configuration :: Configuration.t(), operation :: Operation.t()) :: binary()
+  def body(%Configuration{}, %Operation{data: data}) when is_nil(data), do: ""
 
-  def body(%{json_library: encoder}, %{data: data}) do
+  def body(%Configuration{}, %Operation{data: ""}), do: ""
+
+  def body(%Configuration{json_library: encoder}, %Operation{data: data}) do
     encoder.encode!(data)
   end
 

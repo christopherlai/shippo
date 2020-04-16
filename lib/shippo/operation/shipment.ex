@@ -1,6 +1,6 @@
 defmodule Shippo.Operation.Shipment do
   @moduledoc """
-  [Shippo Shipment](https://goshippo.com/docs/reference#shipments)
+  [Shippo Shipments](https://goshippo.com/docs/reference#shipments)
   """
 
   alias Shippo.Operation
@@ -9,20 +9,8 @@ defmodule Shippo.Operation.Shipment do
   Creates a new shipment object.
   """
   @spec create(params :: map(), opts :: keyword()) :: Operation.t()
-  def create(params, _opts \\ []) do
-    Operation.new(:post, "/shipments", params)
-  end
-
-  @doc """
-  Get shipping rates for a shipment.
-
-  [https://goshippo.com/docs/reference#rates-get](https://goshippo.com/docs/reference#rates-get)
-  """
-  @spec rates(id :: binary(), currency :: binary()) :: Operation.t()
-  def rates(id, currency) do
-    path = Enum.join(["/shipments", id, "rates", currency], "/")
-
-    Operation.new(:post, path, nil)
+  def create(params, opts \\ []) do
+    Operation.new(:post, "/shipments", params, opts)
   end
 
   @doc """
@@ -41,5 +29,17 @@ defmodule Shippo.Operation.Shipment do
   @spec list :: Operation.t()
   def list(opts \\ []) do
     Operation.new(:get, "/shipments", nil, opts)
+  end
+
+  @doc """
+  Get shipping rates for a shipment.
+
+  [https://goshippo.com/docs/reference#rates-get](https://goshippo.com/docs/reference#rates-get)
+  """
+  @spec rates(id :: binary(), currency :: binary()) :: Operation.t()
+  def rates(id, currency) do
+    path = Enum.join(["/shipments", id, "rates", currency], "/")
+
+    Operation.new(:post, path, nil)
   end
 end
