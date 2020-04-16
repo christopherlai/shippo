@@ -9,6 +9,7 @@ defmodule Shippo.MixProject do
     [
       app: @name,
       version: @version,
+      description: "wrapper for the Shippo API",
       source_url: @url,
       elixir: "~> 1.9",
       elixirc_paths: elixirc_paths(Mix.env()),
